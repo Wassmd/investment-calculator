@@ -1,2 +1,5 @@
 <app-header/>
-<app-calculator/>
+<app-calculator (showCalculation) = "onShowCalculation($event)"/>
+@if (showCalculation) {
+  <app-calculation/>
+}
