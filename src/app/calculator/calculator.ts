@@ -22,6 +22,6 @@ export class Calculator {
     console.log("Annual Investment: " + this.annualInvestment);
     console.log("Expected Return: " + this.expectedReturn);
     console.log("Duration: " + this.duration);
-    this.showCalculation.emit(true)  ;
+    this.showCalculation.emit(true);
   }
 }

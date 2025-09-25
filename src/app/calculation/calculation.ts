@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CalculationComponent} from './dummyCal';
 
 @Component({
   selector: 'app-calculation',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './calculation.css'
 })
 export class Calculation {
-
+  dummyList = new CalculationComponent().data;
 }
