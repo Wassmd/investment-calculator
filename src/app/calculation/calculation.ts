@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import {CalculationComponent} from './dummyCal';
+import {Component, inject, input, signal} from '@angular/core';
+import { CalculationComponent } from './dummyCal';
+import { CalculatorModel } from '../calculator/calculator.model';
+import {CalculationService} from './calculation.service';
+import {ResultModel} from './result.model';
 
 @Component({
   selector: 'app-calculation',
@@ -8,5 +11,13 @@ import {CalculationComponent} from './dummyCal';
   styleUrl: './calculation.css'
 })
 export class Calculation {
-  dummyList = new CalculationComponent().data;
+  calculatorData = input<CalculatorModel | null>();
+  calculatedResult = signal<ResultModel[]>([])
+  calculatorService = inject(CalculationService)
+
+  ngOnInit() {
+    if (this.calculatorData) {
+      this.calculatedResult.set(this.calculatorService.calculateInvestmentResult(this.calculatorData()!))
+    }
+  }
 }

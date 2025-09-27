@@ -3,19 +3,17 @@
   <tr>
     <th>Year</th>
     <th>Investment Value</th>
-    <th>Interest(Year)</th>
     <th>Total Interest</th>
     <th>Invested Capital</th>
   </tr>
   </thead>
   <tbody>
-    @for (item of dummyList; track item.col1) {
+    @for (item of calculatedResult(); track item.year) {
   <tr>
-      <td>{{ item.col1 }}</td>
-      <td>{{ item.col2 }}</td>
-      <td>{{ item.col3 }}</td>
-      <td>{{ item.col4 }}</td>
-      <td>{{ item.col5 }}</td>
+      <td>{{ item.year }}</td>
+      <td>{{ item.investmentValue }}</td>
+      <td>{{ item.totalInterest }}</td>
+      <td>{{ item.investedCapital }}</td>
   </tr>
     }
 

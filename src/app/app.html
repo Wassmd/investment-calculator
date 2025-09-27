@@ -1,5 +1,8 @@
 <app-header/>
-<app-calculator (showCalculation) = "onShowCalculation($event)"/>
+<app-calculator
+  (showCalculation) = "onShowCalculation($event)"
+  (calculateResult) = "onCalculationParameters($event)"
+/>
 @if (showCalculation) {
-  <app-calculation/>
+  <app-calculation [calculatorData]="inputData()" />
 }
