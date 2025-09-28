@@ -46,15 +46,18 @@ input {
 }
 
 button {
-  margin-top: 1rem;
   width: 100%;
-  padding: 0.75rem;
-  border: none;
+  padding: 0.5rem;
+  border: 1px solid #76c0ae;
   border-radius: 0.25rem;
-  background-color: #1e5f56;
-  color: #c2e9e0;
-  font-size: 1.25rem;
+  background-color: #83e6c0;
+  color: #1a1f1d;
+  font-size: 1rem;
   font-weight: bold;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #aaf1d6;
 }

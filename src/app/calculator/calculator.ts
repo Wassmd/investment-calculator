@@ -11,10 +11,10 @@ import {CalculatorModel} from './calculator.model';
   styleUrl: './calculator.css'
 })
 export class Calculator {
-  initialInvestment = "";
-  annualInvestment = "";
-  expectedReturn = "";
-  duration = "";
+  initialInvestment = "0";
+  annualInvestment = "0";
+  expectedReturn = "100";
+  duration = "5";
 
  showCalculation = output<boolean>();
  calculateResult = output<CalculatorModel>();
@@ -26,10 +26,10 @@ export class Calculator {
     console.log("Duration: " + this.duration);
     this.showCalculation.emit(true);
     this.calculateResult.emit({
-      initialInvestment: parseFloat(this.initialInvestment),
-      annualInvestment: parseFloat(this.annualInvestment),
-      expectedReturn: parseFloat(this.expectedReturn),
-      duration: parseInt(this.duration)
+      initialInvestment: +this.initialInvestment,
+      annualInvestment: +this.annualInvestment,
+      expectedReturn: +this.expectedReturn,
+      duration: +this.duration
     });
   }
 }
